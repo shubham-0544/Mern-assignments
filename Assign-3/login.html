@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+    <h2>Login</h2>
+
+    <form onsubmit="return loginValidate(event)">
+
+        <label>Email address</label>
+        <input type="email" id="loginEmail" required>
+
+        <label>Password</label>
+        <input type="password" id="loginPassword" required minlength="6">
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script>
+function loginValidate(event) {
+    event.preventDefault();
+    alert("Login Successful");
+    return true;
+}
+</script>
+
+</body>
+</html>

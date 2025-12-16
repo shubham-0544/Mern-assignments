@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="todo-box">
+    <h2>Todo App</h2>
+
+    <div class="input-group">
+        <input type="text" id="todoInput" placeholder="Enter a todo">
+        <button class="add-btn" onclick="addTodo()">Add in your List </button>
+    </div>
+
+    <div class="todo-list" id="todoList">
+
+    </div>
+</div>
+
+<script>
+function addTodo() {
+    let input = document.getElementById("todoInput");
+    let todoText = input.value.trim();
+
+    if (todoText === "") {
+        alert("Please enter a todo");
+        return;
+    }
+    let todoList = document.getElementById("todoList");
+
+    let todoItem = document.createElement("div");
+    todoItem.className = "todo-item";
+
+    todoItem.innerHTML = `
+        <span>${todoText}</span>
+        <button class="delete-btn" onclick="deleteTodo(this)">Delete</button>
+    `;
+
+    todoList.appendChild(todoItem);
+    input.value = "";
+}
+
+function deleteTodo(button) {
+    button.parentElement.remove();
+}
+</script>
+</body>
+</html>

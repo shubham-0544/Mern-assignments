@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sunbeam Registration Form</title>
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .video {
+            flex: 1;
+        }
+
+        .form-section {
+            flex: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <img src="C:/Users/davar/OneDrive/Pictures/sunbeam.png" alt="Sunbeam Logo" width="50%">
+    <h1>SUNBEAM REGISTRATION FORM</h1>
+
+    <div class="container">
+
+        <div class="video">
+            <iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/02q9aAVv1NI" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="form-section">
+            <form>
+                <table cellpadding="5">
+
+                    <tr>
+                        <th align="left">Name :</th>
+                        <td><input type="text"></td>
+                    </tr>
+
+                    <tr>
+                        <th align="left">Birth Date :</th>
+                        <td><input type="date"></td>
+                    </tr>
+
+                    <tr>
+                        <th align="left">Email :</th>
+                        <td><input type="email"></td>
+                    </tr>
+
+                    <tr>
+                        <th align="left">Password :</th>
+                        <td><input type="password"></td>
+                    </tr>
+
+                    <tr>
+                        <th align="left">Address :</th>
+                        <td><textarea></textarea></td>
+                    </tr>
+
+                    <tr>
+                        <th align="left">Gender :</th>
+                        <td>
+                            <input type="radio" name="g"> Male
+                            <input type="radio" name="g"> Female
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th align="left">Upload your photo :</th>
+                        <td><input type="file"></td>
+                    </tr>
+
+                    <tr>
+                        <th align="left">Course :</th>
+                        <td>
+                            <select>
+                                <option value="">-- Select Course --</option>
+                                <option value="java-full-stack">Java Full Stack</option>
+                                <option value="mern">MERN</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th align="left">Skill set :</th>
+                        <td>
+                            <input type="checkbox" name="skill" value="cpp"> C++  
+                            <input type="checkbox" name="skill" value="javascript"> JavaScript  
+                            <input type="checkbox" name="skill" value="java"> Java
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center" style="padding-top: 20px;">
+                            <input type="submit" value="Register" 
+                                style="padding: 8px 20px; font-size: 16px; margin-right: 10px;">
+
+                            <input type="reset" value="Clear" 
+                                style="padding: 8px 20px; font-size: 16px;">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

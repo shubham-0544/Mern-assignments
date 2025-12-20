@@ -1,7 +1,7 @@
-const express = require('express')
+const express = require ('express')
 const cryptojs = require('crypto-js')
 const pool = require('../db/pool')
-const result = require('../utils/result')
+const result =require('../utils/result')
 
 const router = express.Router()
 
@@ -14,24 +14,23 @@ router.post('/signup', (req, res) => {
     })
 })
 
-
 router.post('/signin', (req, res) => {
-    const  { email , password } =req.body
+    const { email, password } = req.body
     const hashedPassword = cryptojs.SHA256(password).toString()
-    const sql =`SELECT * FROM users WHERE email = ? AND password =?`
-    pool.query(sql ,[email ,hashedPassword],(error ,data) => {
+    const sql = `SELECT * FROM users WHERE email = ? AND password = ?`
+    pool.query(sql, [email, hashedPassword], (error, data) => {
         if (error)
             res.send(result.createResult(error))
-        else if(data.length == 0)
-            res.send(result.createResult("invalid emailor password"))
-        else{
-            //jwt
-            res.send(result.createResult(null,data))
+        else if (data.length == 0)
+            res.send(result.createResult("Invalid email or password"))
+        else {
+            // JWT
+            res.send(result.createResult(null, data))
         }
     })
 })
 
-//query parameters
+// query paramaters
 router.get('/', (req, res) => {
     const { email } = req.query
     const sql = `SELECT * FROM users WHERE email = ?`
@@ -39,7 +38,6 @@ router.get('/', (req, res) => {
         res.send(result.createResult(error, data))
     })
 })
-
 
 // request parameters
 router.delete('/:uid', (req, res) => {
@@ -51,4 +49,3 @@ router.delete('/:uid', (req, res) => {
 })
 
 module.exports = router
-

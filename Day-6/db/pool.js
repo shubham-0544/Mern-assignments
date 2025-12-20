@@ -4,6 +4,6 @@ const pool = mysql2.createpool({
     host :'localhost',
     user :'root',
     password :'manager',
-    database :'classwork'
+    database :'internship_db'
 });
 Module.exports = pool;
